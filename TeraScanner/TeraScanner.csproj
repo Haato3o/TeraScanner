@@ -42,6 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Encryption.cs" />
+    <Compile Include="Core\Opcodes.cs" />
+    <Compile Include="Helpers\MemoryScanner.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
