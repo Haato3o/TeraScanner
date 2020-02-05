@@ -83,7 +83,7 @@ namespace TeraScanner.Core {
                 // C7 45 ?? ?? ?? ?? ??         mov [ebp-??],????????
                 if (value[0] == 0xC7 && value[1] == 0x45) {
                     for (int byteIndex = 3; byteIndex < value.Length; byteIndex++) {
-                        KEY = $"{KEY}{value[byteIndex]:X}";
+                        KEY = $"{KEY}{value[byteIndex]:X2}";
                     }
                 } else if (value[0] == 0x8B && value[1] == 0x06) {
                     // 8B 06                    mov eax,[esi]
@@ -105,7 +105,7 @@ namespace TeraScanner.Core {
                 // C7 45 ?? ?? ?? ?? ??         mov [ebp-??],????????
                 if (value[0] == 0xC7 && value[1] == 0x45) {
                     for (int byteIndex = 3; byteIndex < value.Length; byteIndex++) {
-                        IV = $"{IV}{value[byteIndex]:X}";
+                        IV = $"{IV}{value[byteIndex]:X2}";
                     }
                 } else if (value[0] == 0x8B && value[1] == 0x40) {
                     IVPart--;
