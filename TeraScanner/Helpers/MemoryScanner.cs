@@ -62,7 +62,11 @@ namespace TeraScanner.Helpers {
                     } catch {
                         Console.WriteLine("[Error] Failed to open process, try running this as administrator.");
                     }
-                    
+                    if (ProcessHandle == IntPtr.Zero) {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Missing permissions. Try running this as administrator.");
+                        throw new Exception("Missing permission to read process memory");
+                    }
                 } else {
                     if (PID != 0) {
                         PID = 0;
